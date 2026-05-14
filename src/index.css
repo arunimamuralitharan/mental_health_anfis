@@ -1,0 +1,45 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, monospace;
+
+  /* Bento Blueprint Palette */
+  --color-primary-50: #f0fdfa;
+  --color-primary-100: #dbf1f4;
+  --color-primary-200: #bbe3eb;
+  --color-primary-300: #8ecddb;
+  --color-primary-400: #5cb0c5;
+  --color-primary-500: #0d9488;
+  --color-primary-600: #0d9488;
+  --color-primary-700: #0f766e;
+  --color-primary-800: #115e59;
+  --color-primary-900: #134e4a;
+  --color-primary-950: #042f2e;
+
+  --color-risk-low: #10b981;
+  --color-risk-mod: #f59e0b;
+  --color-risk-high: #f97316;
+  --color-risk-crit: #ef4444;
+
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-3xl: 2rem;
+}
+
+@layer base {
+  body {
+    @apply bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-50 antialiased min-h-screen flex flex-col overflow-x-hidden;
+  }
+}
+
+@layer components {
+  .bento-card {
+    @apply bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-[12px] p-[20px] shadow-[0_1px_3px_rgba(0,0,0,0.02)] dark:shadow-[0_1px_3px_rgba(0,0,0,0.2)];
+  }
+
+  .bento-title {
+    @apply text-[13px] font-semibold mb-[16px] flex items-center gap-2 text-slate-900 dark:text-slate-100;
+  }
+}
